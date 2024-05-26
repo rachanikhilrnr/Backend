@@ -22,6 +22,10 @@ app.listen(PORT ,() => {
 app.get('',(req,res) => {
     res.json("WELCOME");
 })
+
+app.get('/hello',(req,res) => {
+    res.json("HELLO WORLD");
+})
 app.get('/getInfo',(req,res) => {
     try{
         postModel.find({})
