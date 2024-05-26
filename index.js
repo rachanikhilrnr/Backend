@@ -17,6 +17,6 @@ app.listen(PORT ,() => {
 app.get('',(req,res) => {
     res.json("WELCOME");
 })
-app.get('getInfo',(req,res) => {
+app.get('/getInfo',(req,res) => {
     res.json("Super excited to start with vercel");
 })
