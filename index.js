@@ -23,7 +23,12 @@ app.get('',(req,res) => {
     res.json("WELCOME");
 })
 app.get('/getInfo',(req,res) => {
-    postModel.find({})
-    .then(users => res.json(users))
-    .catch(error => res.json(error))
+    try{
+        postModel.find({})
+        .then(users => res.json(users))
+        .catch(error => res.json(error))
+    }catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
 })
